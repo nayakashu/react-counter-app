@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
 
 class Counter extends Component {
+  componentDidUpdate(prevProps, prevState) {
+    console.log('prevProps', prevProps);
+    console.log('prevState', prevState);
+
+    // Conditional retrieval of data from server based on change in props
+    if (prevProps.counter.value !== this.props.counter.value) {
+      // Make AJAX call to server to retrieve the data
+    }
+  }
+
   render() {
     console.log('Counter - Rendered');
     return (
